@@ -1,7 +1,7 @@
 package rpu
 
-import chisel3._ 
-import chisel3.util._ 
+import chisel3._
+import chisel3.util._
 
 import rpu.Constants._
 
@@ -15,7 +15,7 @@ class rpu_decoder extends Module {
     val rd = Output(UInt(5.W))
     val imm = Output(UInt(32.W))
   })
-  
+
   io.instr_type := rv_instr_t.nop
   switch(io.ir(6, 0)) {
     is (OPCODE_LUI.U) {
